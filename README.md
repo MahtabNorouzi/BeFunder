@@ -1,11 +1,11 @@
 # BeFunder
-Installation:
+## Installation:
 $ npm install
 
-Running the client:
+## Running the client:
 
-# compiling the smart contracts
+### compiling the smart contracts
 $ truffle migrate --reset
 
-# running the code
+### running the code
 $ npm start
