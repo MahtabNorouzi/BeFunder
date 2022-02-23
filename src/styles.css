@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+    font-family: "FajallaOne";
+    src: url(./assets/font/Fjalla_One/FjallaOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Audry";
+    src: local("Audry"), url(./assets/font/Audrey/Audrey-Medium.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "Capriola";
+    src: url(./assets/font/Capriola/Capriola-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Gotham1";
+    src: url(./assets/font/Hero/Hero.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "Gotham2";
+    src: url(./assets/font/HomepageBaukasten/BOOK/HomepageBaukasten-Book.otf) format("opentype");
+}

@@ -1,0 +1,125 @@
+.content {
+    padding: 16px;
+    color: #7a7a7a;
+}
+
+.content > mat-card {
+    width: 200px;
+}
+
+.card-title {
+  text-align: center;
+  font-weight: bold;
+  /*margin: auto;
+  width: 50%; */
+  padding: 10px;
+
+  color: #fff;
+
+  background-color: #264878;
+  border-color: #264878;
+}
+
+.card-fund-raised{
+    text-align: center;
+    font-weight: bold;
+    color: #264878;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  
+}
+
+.card-fund-goal{
+    text-align: center;
+    font-weight: bold;
+    color: #7a7a7a;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  
+}
+
+hr.line {
+    border-top: 1px solid rgb(83, 82, 82);
+  }
+
+.divider {
+    border-bottom: 1px solid #ccc;
+    margin: 5px 0px;
+}
+
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .mat-progress-bar {
+    height: 30px;
+  }
+
+  .bggreen {
+    background: #dce5ea;
+    border-top: 1px solid #dce5ea;
+    border-bottom: 1px solid #dce5ea;
+    text-align: center;
+}
+
+.minins {
+    color: #109418;
+    color: #264878;
+    margin-top: 5px;
+}
+.fsize10 {
+    font-size: 10px !important;
+}
+
+.m14tb {
+    margin: 14px 0 !important;
+}
+
+.grey-color{
+    color: #7a7a7a;
+}
+.submit{
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+.invest-button{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    align-content: center;
+    align-items: center;
+}
+
+.proj-image {
+ width: 100%;
+ max-height: 250px;
+ margin-left: 0%;
+     
+}
+
+.infoi{
+    z-index: 10; 
+  
+    position: absolute;
+    top: 20;
+    left: 50;
+}
+
+#loadimg {
+    width: 500px;
+}
+
+#link {
+    color: rgba(131, 120, 23, 0.671);
+}
+
+.text {
+    font-family: Capriola , sans-serif !important;
+    text-align: center;
+}

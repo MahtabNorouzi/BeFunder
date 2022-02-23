@@ -1,0 +1,48 @@
+
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 600px;
+}
+
+.bottom{
+    height: 50px;
+}
+
+#left-title {
+    font-family: Avenir, sans-serif !important; 
+    font-size: 240%;
+    color: grey;
+
+}
+
+#faq {
+    width: 180px;
+    /* background-color:#D9D9D9; */
+    background-color: khaki;
+    padding: 50px;
+    margin: 20px;
+    height: 300px;
+  }
+
+#info {
+    text-align: center;
+    color: #B2B2B2;
+    font-size: large;
+}
+
+#form{
+    width: 90%;
+}
+
+#title {
+    text-align: center;
+}
+
+.label {
+    font-family: Avenir, sans-serif !important; 
+
+    font-size: smaller;
+}

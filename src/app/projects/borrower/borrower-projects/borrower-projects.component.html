@@ -1,0 +1,84 @@
+<app-menu> </app-menu>
+
+<div *ngIf="!projectData.length" fxLayout="column" fxLayoutAlign="space-around center">
+  <img id="loadimg" class="center" src="/assets/images/load2.png" alt="">
+  <div class="text">
+    <p>There is no projects here yet.</p>
+    <p>Feel free to <a href="/addprojects" id="link"> <b>add</b> </a> one :)</p> <br>
+    <br><br><br><br><br><br><br>
+  </div>
+</div>
+
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="30%" fxFlex.xs="100%" fxFlex.sm="40%" *ngFor="let data of projectData;  let i = index;">
+        <mat-card class="mat-elevation-z4" >
+          <div class="infoi">
+            <img  *ngIf= 'data.state==2' src="assets/success-stamp.jpeg" height="40" width="62"/>
+            <img  *ngIf= 'data.state==0' src="assets/funding-stamp.jpeg" height="40" width="62"/>
+            <img  *ngIf= 'data.state==1' src="assets/expired-red.jpeg" height="40" width="62"/>
+        </div>
+          <mat-card-content>
+            <div class='card-title'>  {{data.projectTitle |titlecase }} </div> 
+            <div>
+            <div class='card-fund-raised'>  {{data.currentAmount }}$</div> 
+            <div class='card-fund-goal'>  Raised of {{data.goalAmount }}$</div> 
+          </div>
+        
+
+
+            <div class="divider"> </div>
+
+            <mat-grid-list class='grey-color' cols="5" id="page">
+                <mat-grid-tile  id="left-sidebar">
+                    <span>Days:</span> <span><strong>{{data.day}}</strong></span>
+                </mat-grid-tile>
+                <mat-grid-tile id="main-content" colspan="2">
+                    <span>Hours:</span> <span><strong>{{data.hour}} </strong></span>
+                </mat-grid-tile>
+                <mat-grid-tile id="right-sidebar">
+                    <span>Mins:</span> <span><strong>{{data.minutes}}</strong></span>
+                </mat-grid-tile>
+            </mat-grid-list>
+              <div class="divider"> </div>
+              
+              <section class="example-section">
+                <mat-progress-bar
+                    [color]= "warn"
+                    [value]="data.raised"
+                    [bufferValue]="bufferValue">
+                </mat-progress-bar>
+                      <div style="position: absolute; padding: 10px; color: white;"> {{data.raised | number: '1.0-0'}}% </div>
+              </section>
+
+
+              <mat-grid-list cols="4" id="page" class='m14tb vdivide bggreen'>
+                
+                    <mat-grid-tile id="main-content" colspan="2"> 
+                    <div>
+                        <div class="minins"><strong> $ {{data.minimalInvestment}} </strong></div> 
+                        <span class="fsize10">MINIMAL INVESTMENT</span> 
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile id="right-sidebar"> 
+                <div>
+                    <div class="minins"><strong>{{data.deadline}}</strong></div> 
+                    <span class="fsize10">DURATION</span>
+                </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+
+            <p class='grey-color'>
+              {{data.projectDesc}}
+            </p>
+
+            <button *ngIf="data.state ==2 && data.progress == 0" (click)="setWorkDone()">work is done</button>
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+    </div>
+    </div>
+
+    <app-footer></app-footer>

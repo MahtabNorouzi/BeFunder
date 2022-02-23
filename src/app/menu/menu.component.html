@@ -1,0 +1,53 @@
+<div>
+
+    <mat-toolbar color="secondary">
+        <mat-nav-list class="list-horizontal">
+            <mat-menu #searchmenu="matMenu" [overlapTrigger]="false">
+                <button mat-menu-item>
+                    <mat-icon>home</mat-icon>
+                    <span>Bills</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>save_alt</mat-icon>
+                    <span>Claims </span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>home</mat-icon>
+                    <span>Providers</span>
+                </button>
+            </mat-menu>
+
+        </mat-nav-list>
+    </mat-toolbar>
+    <div class="basic-container">
+
+    </div>
+</div>
+
+<mdb-navbar SideClass="navbar navbar-light blue-grey lighten-5">
+    <mat-list-item class='list'>
+        <button mat-menu-item (click)='redirectHome()'>Home</button>
+    </mat-list-item>
+
+    <mat-list-item class='list'>
+        <button mat-menu-item (click)='redirectProjects()'>Projects</button>
+    </mat-list-item>
+
+    <mat-list-item class='list'>
+        <button mat-menu-item (click)='redirectProjectAdd()'>Add Project</button>
+    </mat-list-item>
+    <!-- <mat-list-item class='list'>
+        <button mat-menu-item (click)='redirectProjectOwner()'>Projects Manager</button>
+    </mat-list-item> -->
+    <mat-list-item class='list'>
+        <button mat-menu-item>About Us</button>
+    </mat-list-item>
+
+    <mat-list-item class='list'>
+        <button mat-menu-item (click)='redirectRegister()'>Register</button>
+    </mat-list-item>
+
+    <mat-list-item class='list'>
+        <button mat-menu-item>Search</button>
+    </mat-list-item>
+  </mdb-navbar>

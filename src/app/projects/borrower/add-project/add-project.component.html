@@ -1,0 +1,73 @@
+<app-menu> </app-menu>
+
+<br><br>
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  
+  <!-- <div class="child-1">
+    <div fxLayout="column" fxLayoutAlign="space-around center" >
+      <div id="left-title">
+        Lorem ipsum <br>  Blockchain
+      </div>
+<br><br>
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <div id="faq" fxFlexOffset="20">
+          <b>For more information, visit FAQ.</b>
+        </div>
+        <div id="info" fxFlexOffset="10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+
+      </div>
+    </div>
+  </div> -->
+ <p>Welcome {{auth.instantUser.fullName}} <br>  Blockchain</p> 
+
+  <div class="child-2" fxFlex="40">
+    <!-- Default form subscription -->
+    <form [formGroup]="addActionForm" (ngSubmit)="submit()" id="form" class="border border-light p-5">
+
+      <p class="h4 mb-4" id="title">Enter your information</p>
+      <br>
+
+      <label class="label">Title:</label>
+      <input formControlName="projectName" type="text" class="form-control mb-4">
+
+      <label class="label">Description:</label>
+      <input formControlName="projectDescription" type="text" class="form-control mb-4">
+
+      <label class="label">Buyer Address:</label>
+      <input formControlName="buyerAddress" type="text" class="form-control mb-4">
+
+      <label class="label">Duration:</label>
+      <input formControlName="duration" type="number" class="form-control mb-4">
+
+      <label class="label">Goal:</label>
+      <input formControlName="goal" type="number" value=" " class="form-control mb-4">
+
+      <label class="label">Interest Rate:</label>
+      <input formControlName="interestRate" type="number" value=" " class="form-control mb-4">
+
+      <mat-form-field [ngStyle]="{'width': '100%'}">
+
+      <ngx-mat-file-input  #removableInput formControlName="requiredfile" placeholder="Add a file"  [accept]="'.pdf'" required></ngx-mat-file-input>
+        <!--mat-icon matSuffix>folder</mat-icon-->
+      <button mat-icon-button matSuffix *ngIf="!removableInput.empty" (click)="removableInput.clear($event)">
+        <mat-icon>clear</mat-icon>
+      </button>
+      <mat-error *ngIf="addActionForm.get('requiredfile').hasError('required')">
+          Please select a file
+      </mat-error>
+      </mat-form-field>
+
+
+      <br><br>
+      <!-- Sign in button -->
+      <!-- <button mat-raised-button color="primary" (click)="submit()">Add!</button> -->
+      <button mdbBtn color="blue-grey" block="true" type="submit">Add</button>
+    </form>
+  </div>
+
+</div>
+
+<br><br><br><br>
+<app-footer> </app-footer>
