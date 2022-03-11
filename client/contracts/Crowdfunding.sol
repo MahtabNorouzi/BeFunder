@@ -120,6 +120,7 @@ contract Project {
         _;
     }
 
+    //Modifire to make sure the account is related to a buyer
     modifier isBuyer() {
         require(msg.sender == buyer);
         _;
@@ -177,6 +178,7 @@ contract Project {
         progress = getMyEnumValueByKey(_e);
     }
 
+    //Show the projects of a borrower
     function getDetailsBorrower()
         public
         view
@@ -210,6 +212,8 @@ contract Project {
         _investors = investors;
     }
 
+
+    //Show approved projects of a buyer
     function getDetails()
         public
         view
@@ -241,6 +245,7 @@ contract Project {
         projectImage = image;
     }
 
+    //Show finished projects waiting for payment
     function getDetailsForBuyerPayment()
         public
         view
@@ -271,6 +276,8 @@ contract Project {
         projectImage = image;
     }
 
+
+    //Show projects an investor invested on
     function getDetailsLender()
         public
         view
@@ -302,6 +309,7 @@ contract Project {
         projectImage = image;
     }
 
+    //to invest on a project as an investor
     function contribute() external payable inState(State.Fundraising) {
         contributions[msg.sender] = contributions[msg.sender].add(msg.value);
         investors.push(msg.sender);
@@ -310,14 +318,13 @@ contract Project {
         checkIfFundingCompleteOrExpired();
     }
 
+ 
     function approveByBuyer() public inStatus(Status.NotVerifiedByBuyer) {
         status = Status.VerifiedByBuyer;
     }
 
     function checkIfFundingCompleteOrExpired() public {
         uint256 platformFees = 2;
-        // uint interestt = (interestRate * duration) / 360;
-        // moneyNeeded = (amountGoal*100) - interestt;
         uint256 moneyNeeded = (amountGoal * 80) / 100;
         if ((currentBalance) >= moneyNeeded) {
             state = State.Successful;
@@ -357,7 +364,7 @@ contract Project {
         payingInvestors();
     }
 
-    // The investors are paid
+    // The investors are getting paid
     function payingInvestors()
         internal
         progressState(Progress.Finish)
